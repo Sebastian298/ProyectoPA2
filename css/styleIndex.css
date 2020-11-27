@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+
+body, html{
+    height: 100% !important;
+    margin: 0 !important;
+    font-family:'Roboto Condensed', sans-serif;
+    line-height:180% !important;
+    color: #444 !important;
+    text-align: center !important;
+}
+
+.imgOne{
+    background-image: url(../resource/Fondo1.jpg);
+    min-height: 100%;
+
+}
+.imgTwo{
+    background-image: url(../resource/Fondo2.jpg);
+    min-height: 100%;
+    
+}
+.imgThree{
+    background-image: url(../resource/Fondo3.jpg);
+    min-height: 100%;
+    
+}
+.imgFour{
+    background-image: url(../resource/Fondo4.jpg);
+    min-height: 100%;
+}
+
+.imgOne, .imgTwo, .imgThree, .imgFour{
+    position: relative;
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.textOne{
+    color: #fbfbfb;
+    font-size:480%;
+    top:45%;
+}
+
+.textTwo{
+    color:#c73256;
+    font-size: 400%;
+    top: 75%;
+}
+
+.textThree{
+    color:#d1345b;
+    font-size: 400%;
+    top:64%;
+}
+
+.textFour{
+    color:#fff;
+    font-size: 225%;
+    top:45%;
+}
+.textOne, .textTwo, .textThree, .textFour{
+    position:absolute;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    text-shadow: 0 0 10px #000;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+section{
+    padding:50px 80px;
+}
+
+.blue{
+    background-color: #105981;
+    color: #fff;
+}
+
+@media(max-width:768px){
+    .textOne{
+        font-size: 250%;
+    }
+    .textTwo{
+        font-size: 250%;
+    }
+    .textThree{
+        font-size: 200%;
+    }
+}
+#titleNav{
+    font-size:28px;
+    color:#2986f0;
+    font-family: 'Goldman', cursive;
+}
+
+#navBar{
+    color:#1b1b1b;
+}
+
+#header{
+    font-size:20px;
+    color: #a5a3a3;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+#icon{
+    width: 26px;
+    height: 26px;
+}
