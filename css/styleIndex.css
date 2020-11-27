@@ -11,22 +11,22 @@ body, html{
 }
 
 .imgOne{
-    background-image: url(../resource/Fondo1.jpg);
+    background-image: url("https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
     min-height: 100%;
 
 }
 .imgTwo{
-    background-image: url(../resource/Fondo2.jpg);
+    background-image: url("https://images.pexels.com/photos/2881233/pexels-photo-2881233.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
     min-height: 100%;
     
 }
 .imgThree{
-    background-image: url(../resource/Fondo3.jpg);
+    background-image: url("https://images.pexels.com/photos/442152/pexels-photo-442152.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
     min-height: 100%;
     
 }
 .imgFour{
-    background-image: url(../resource/Fondo4.jpg);
+    background-image: url("https://images.pexels.com/photos/4344516/pexels-photo-4344516.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
     min-height: 100%;
 }
 
