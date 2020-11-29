@@ -37,7 +37,3 @@ $(document).ready(function () {
         }
     }
 });
-
-function registerUser(){
-    txtPassword.value == txtConfirmPassword.value ? alert('Correcto') : alert('Incorrecto');
-}
