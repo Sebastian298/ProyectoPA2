@@ -10,7 +10,7 @@
 </head>
 <body>
     <header class="menuContainer"></header>
-    <form id="form1" class="was-validated" novalidate action="../db/addUser.php" method="POST">
+    <form id="form1" class="was-validated" novalidate>
         <div class="container py-3">
             <h4 class="text-center text-uppercase">JsNet.com</h4>
             <div class="row">
@@ -90,7 +90,7 @@
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-success float-right rounded-0"">Register</button>
+                                        <button type="button" class="btn btn-success float-right rounded-0" onclick="registerUser()">Register</button>
                                     </div>
                                 </div>
                             </div>
