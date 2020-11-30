@@ -27,7 +27,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fa fa-user"></i></span>
                                             </div>
-                                            <input ID="txtUserName" Class="form-control" type="text" required/>
+                                            <input ID="txtUserName" Class="form-control" type="text" required onpaste="return false"/>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -38,7 +38,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fa fa-user"></i></span>
                                             </div>
-                                            <input ID="txtName" Class="form-control" type="text" required/>
+                                            <input ID="txtName" Class="form-control" type="text" required onpaste="return false"/>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -49,7 +49,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fa fa-user"></i></span>
                                             </div>
-                                            <input ID="txtLastName" Class="form-control" type="text" required/>
+                                            <input ID="txtLastName" Class="form-control" type="text" required onpaste="return false"/>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -60,7 +60,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fa fa-user"></i></span>
                                             </div>
-                                            <input ID="txtEmail" Class="form-control" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="name@example.com" required/>
+                                            <input ID="txtEmail" Class="form-control" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="name@example.com" required onpaste="return false"/>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Enter a valid email Or Please fill out this field.</div>
                                         </div>
@@ -71,7 +71,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fa fa-lock"></i></span>
                                             </div>
-                                            <input ID="txtPassword"  type="Password" Class="form-control" required/>
+                                            <input ID="txtPassword"  type="Password" Class="form-control" required onpaste="return false"/>
                                         </div>
                                         <div id="strengthMessage"></div>
                                         <div class="valid-feedback">Valid.</div>
@@ -83,7 +83,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fa fa-lock"></i></span>
                                             </div>
-                                            <input ID="txtConfirmPassword" type="Password" Class="form-control" required/>
+                                            <input ID="txtConfirmPassword" type="Password" Class="form-control" required onpaste="return false"/>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>

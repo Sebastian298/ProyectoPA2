@@ -1,6 +1,6 @@
 <?php session_start();
-if(isset($_SESSION['User'])){
-    require 'views/index.view.php';
+if(isset($_SESSION['user'])){
+  header('Location: views/index.view.php');
   }else{
       header('Location: login.php');
   }

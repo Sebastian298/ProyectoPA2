@@ -15,33 +15,33 @@
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="inputEmail4">Outdoor Number</label>
-                  <input type="text" class="form-control" placeholder="1234" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required/>
+                  <input type="text" class="form-control" placeholder="1234" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required onpaste="return false"/>
                   <div class="valid-feedback">Valid.</div>
                   <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="inputPassword4">Interior number</label>
-                  <input type="text" class="form-control" placeholder="1234" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required/>
+                  <input type="text" class="form-control" placeholder="1234" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required onpaste="return false"/>
                   <div class="valid-feedback">Valid.</div>
                   <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
               </div>
               <div class="form-group">
                 <label for="inputAddress">Street</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
+                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required onpaste="return false">
                 <div class="valid-feedback">Valid.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
               </div>
               <div class="form-group">
                 <label for="inputAddress2">Suburbs</label>
-                <input type="text" class="form-control" id="inputAddress2" required>
+                <input type="text" class="form-control" id="inputAddress2" required onpaste="return false">
                 <div class="valid-feedback">Valid.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="inputCity">City</label>
-                  <input type="text" class="form-control" id="inputCity" required>
+                  <input type="text" class="form-control" id="inputCity" required onpaste="return false">
                   <div class="valid-feedback">Valid.</div>
                   <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
@@ -58,7 +58,7 @@
                 </div>
                 <div class="form-group col-md-2">
                   <label for="inputZip">Zip</label>
-                  <input type="text" class="form-control" id="inputZip" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
+                  <input type="text" class="form-control" id="inputZip" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required onpaste="return false">
                   <div class="valid-feedback">Valid.</div>
                   <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
