@@ -16,11 +16,15 @@ function registerUser(){
         'Se a registrado correctamente',
         'success'
        ).then(() => {
-   location.href = "../login.php"
+   location.href = "../views/address.view.php"
 })
       
    }else {
-       alert("Quedan campos vaciós!");
+    Swal.fire(
+        'Error!',
+        `There's an empty field or a field with bad information`,
+        'error'
+      )
    }
  
 }
