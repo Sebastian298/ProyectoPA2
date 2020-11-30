@@ -12,7 +12,7 @@
             $resultado = mysqli_query($conexion,$query);
             $array = mysqli_fetch_array($resultado);
             if ($array['count']>0) {
-                $_SESSION['user'] = $usuario;
+                $_SESSION['user'] = $user;
                 header('Location: index.php');
                 mysqli_close($conexion);
             }else{

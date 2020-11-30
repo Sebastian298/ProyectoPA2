@@ -10,7 +10,7 @@
 </head>
 <body>
     <header class="menuContainer"></header>
-    <form id="form1" class="was-validated" novalidate>
+    <form id="form1" class="was-validated" novalidate action="../db/addUser.php" method="POST">
         <div class="container py-3">
             <h4 class="text-center text-uppercase">JsNet.com</h4>
             <div class="row">
@@ -28,7 +28,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fa fa-user"></i></span>
                                             </div>
-                                            <input ID="txtUserName" Class="form-control" type="text" onkeypress='return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 &&  event.charCode <=122 || event.charCode==32' required onpaste="return false"/>
+                                            <input ID="txtUserName" Class="form-control" name="username" type="text" onkeypress='return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 &&  event.charCode <=122 || event.charCode==32' required onpaste="return false"/>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -39,7 +39,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fa fa-user"></i></span>
                                             </div>
-                                            <input ID="txtName" Class="form-control" type="text"onkeypress='return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 &&  event.charCode <=122 || event.charCode==32' required onpaste="return false"/>
+                                            <input ID="txtName" Class="form-control" name="name" type="text"onkeypress='return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 &&  event.charCode <=122 || event.charCode==32' required onpaste="return false"/>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -50,7 +50,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fa fa-user"></i></span>
                                             </div>
-                                            <input ID="txtLastName" Class="form-control" type="text"onkeypress='return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 &&  event.charCode <=122 || event.charCode==32' required onpaste="return false"/>
+                                            <input ID="txtLastName" Class="form-control" name="lastname" type="text"onkeypress='return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 &&  event.charCode <=122 || event.charCode==32' required onpaste="return false"/>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -61,7 +61,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fa fa-phone"></i></span>
                                             </div>
-                                            <input ID="txtPhone" placeholder="+52" Class="form-control" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required onpaste="return false"/>
+                                            <input ID="txtPhone" placeholder="+52" Class="form-control" name="phonenumber" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required onpaste="return false"/>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -72,7 +72,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fa fa-email"></i></span>
                                             </div>
-                                            <input ID="txtEmail" Class="form-control" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="name@example.com" required onpaste="return false"/>
+                                            <input ID="txtEmail" Class="form-control" name="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="name@example.com" required onpaste="return false"/>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Enter a valid email Or Please fill out this field.</div>
                                         </div>
@@ -83,25 +83,14 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fa fa-lock"></i></span>
                                             </div>
-                                            <input ID="txtPassword"  type="Password" Class="form-control" required onpaste="return false"/>
+                                            <input ID="txtPassword"  type="Password" name="password" Class="form-control" required onpaste="return false"/>
                                         </div>
                                         <div id="strengthMessage"></div>
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
                                     <div class="form-group">
-                                        <label>Confirm Password</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="fa fa-lock"></i></span>
-                                            </div>
-                                            <input ID="txtConfirmPassword" type="Password" Class="form-control" required onpaste="return false"/>
-                                            <div class="valid-feedback">Valid.</div>
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <button type="button" class="btn btn-success float-right rounded-0" onclick="registerUser()">Register</button>
+                                        <button type="submit" class="btn btn-success float-right rounded-0"">Register</button>
                                     </div>
                                 </div>
                             </div>
@@ -120,6 +109,7 @@
       $('.menuContainer').load('../resource/navbar.html');
       $('.footer').load('../resource/footer.html');
     });
+    
   </script>
 </body>
 </html>
