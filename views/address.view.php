@@ -34,14 +34,14 @@
               </div>
               <div class="form-group">
                 <label for="inputAddress2">Suburbs</label>
-                <input type="text" class="form-control" id="inputAddress2" required onpaste="return false">
+                <input type="text" class="form-control" id="inputAddress2" onkeypress='return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 &&  event.charCode <=122 ' required onpaste="return false">
                 <div class="valid-feedback">Valid.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="inputCity">City</label>
-                  <input type="text" class="form-control" id="inputCity" required onpaste="return false">
+                  <input type="text" class="form-control" id="inputCity" onkeypress='return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 &&  event.charCode <=122 ' required onpaste="return false">
                   <div class="valid-feedback">Valid.</div>
                   <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
