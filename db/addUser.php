@@ -1,12 +1,12 @@
 <?php session_start();
     if($_SERVER['REQUEST_METHOD']=='POST'){
-
-       $username = $_POST['username'];
-       $name = $_POST['name'];
-       $lastname = $_POST['lastname'];
-       $phone = $_POST['phonenumber'];
-       $email = $_POST['email'];
-       $password = $_POST['password'];
+        
+       $username = htmlspecialchars($_POST['username']);
+       $name = htmlspecialchars($_POST['name']);
+       $lastname = htmlspecialchars($_POST['lastname']);
+       $phone = htmlspecialchars($_POST['phonenumber']);
+       $email = htmlspecialchars($_POST['email']);
+       $password = htmlspecialchars($_POST['password']);
        try {
         include 'db_conexion.php';
         $query = "INSERT INTO USUARIO (Apellidos, CorreoElectronico, Nombre, Password, Telefono, Usuario) VALUES ('$lastname','$email','$name','$password','$phone','$username')";

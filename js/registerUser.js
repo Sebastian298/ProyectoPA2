@@ -1,3 +1,4 @@
+userID.style.display ='none';
 function registerUser(){
     let user = txtUserName.value;
     let telefono = txtPhone.value;
@@ -12,8 +13,8 @@ function registerUser(){
        peticion.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
        peticion.send(params);
        Swal.fire(
-        'Excelente!',
-        'Se a registrado correctamente',
+        'Excellent!',
+        'It has been successfully registered',
         'success'
        ).then(() => {
    location.href = "../views/address.view.php"
@@ -32,4 +33,45 @@ function registerUser(){
 function CamposVacios(){
     if(txtUserName.value==""|txtPhone.value==""|txtName.value==""|txtLastName.value==""|txtEmail.value==""|txtPassword.value=="") return false;
     return true;
+}
+
+function validarCaptura(){
+    if(isNaN(nameUser.value) && isNaN(lName.value)){
+        return true;
+	}
+	return false
+}
+
+function inputVacio(){
+    if(nameUser.value==""|emailUser.value==""|tel.value==""|lName.value=="") return false;
+    return true;
+}
+
+function updateUser(){
+    if (validarCaptura() && inputVacio()) {
+        let userName = nameUser.value,
+        lastName = lName.value,
+        idUser = userID.value,
+        emUser = emailUser.value,
+        telUser = tel.value;
+
+        let peticion = new XMLHttpRequest();
+        peticion.open('POST','../db/updateUser.php');
+        let param = 'Id='+idUser+'&userName='+userName+'&lastName='+lastName+'&email='+emUser+'&phone='+telUser;
+        peticion.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        peticion.send(param);
+        Swal.fire(
+            'Excellent!',
+            'Successful update',
+            'success'
+           ).then(() => {
+       location.href = "../views/profile.view.php"
+    })
+    }else{
+        Swal.fire(
+            'Error!',
+            `There's an empty field or a field with bad information`,
+            'error'
+          )
+    }
 }
