@@ -8,15 +8,22 @@
     
         try {
             include 'db/db_conexion.php';
-            $query = "SELECT COUNT(*) as count FROM usuario where Usuario='$user' AND Password = '$password'";
+           /* $query = "SELECT * FROM usuario where Usuario='$user' AND Password = '$password'";
             $resultado = mysqli_query($conexion,$query);
             $array = mysqli_fetch_array($resultado);
-            if ($array['count']>0) {
+            if ($array>0) {
                 $_SESSION['user'] = $user;
+                $_SESSION['id'] = $array[0];
                 header('Location: index.php');
                 mysqli_close($conexion);
-            }else{
-                $errores .= '<li style="color: blue;">Datos incorrectos</li>';
+            }*/
+            $query = "SELECT * FROM usuario where Usuario='$user' AND Password = '$password'";
+            $resultado = mysqli_query($conexion,$query);
+            while($array = mysqli_fetch_array($resultado)){ 
+                $_SESSION['user'] = $user;
+                $_SESSION['id'] = $array[0];
+                header('Location: index.php');
+                mysqli_close($conexion);
             }
         } catch (PDOException $e) {
             echo 'Error!: ',  $e->getMessage(), "\n";
