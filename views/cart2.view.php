@@ -1,7 +1,9 @@
-
-
+<?php session_start();
+if (!(isset($_SESSION['user']))) {
+   header('Location: ../login.php');
+}
+?>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
