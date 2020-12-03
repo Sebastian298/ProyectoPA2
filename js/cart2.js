@@ -5,11 +5,12 @@ var fadeTime = 300;
 
 
 /* Assign actions */
-$('.quantity input').change(function() {
+$('#number').change(function() {
   updateQuantity(this);
 });
 
 $('.remove button').click(function() {
+  alert('click');
   removeItem(this);
 });
 
@@ -81,7 +82,6 @@ function updateQuantity(quantityInput) {
   var price = parseFloat(productRow.children('.price').text());
   var quantity = $(quantityInput).val();
   var linePrice = price * quantity;
-
   /* Update line price display and recalc cart totals */
   productRow.children('.subtotal').each(function() {
     $(this).fadeOut(fadeTime, function() {
@@ -93,6 +93,21 @@ function updateQuantity(quantityInput) {
 
   productRow.find('.item-quantity').text(quantity);
   updateSumItems();
+  //se actualizara la lista de la session en php
+  let cadena = productRow.children('.item').children('.product-details').children('#codeProduct').text();
+  
+  let idProduct = parseInt(cadena.substring(cadena.indexOf(':')+1));
+  
+  updateCarrito(idProduct,quantity);
+
+}
+
+function updateCarrito(idProduct,quantity){
+  let params = 'IdProducto='+idProduct+'&Quantity='+quantity;
+  let peticion = new XMLHttpRequest();
+    peticion.open('POST','../db/updateCarrito.php');
+    peticion.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    peticion.send(params);
 }
 
 function updateSumItems() {
@@ -100,7 +115,7 @@ function updateSumItems() {
   $('.quantity input').each(function() {
     sumItems += parseInt($(this).val());
   });
-  $('.total-items').text(sumItems);
+  $('#totalItems').text(sumItems + " Products in your bag");
 }
 
 /* Remove item from cart */
@@ -112,6 +127,18 @@ function removeItem(removeButton) {
     recalculateCart();
     updateSumItems();
   });
+  
+  let cadena = productRow.children('.item').children('.product-details').children('#codeProduct').text();
+  let idProduct = parseInt(cadena.substring(cadena.indexOf(':')+1));
+  deleteCarrito(idProduct);
+}
+
+function deleteCarrito(id){
+  let params = 'idProduct='+id;
+  let peticion = new XMLHttpRequest();
+    peticion.open('POST','../db/deleteCarrito.php');
+    peticion.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    peticion.send(params);
 }
 
 function getCarrito(){
@@ -132,27 +159,32 @@ function getCarrito(){
               <div class="product-details">
                 <h1><strong><span class="item-quantity">${data[index].Cantidad}</span>  </strong>${data[index].Nombre}</h1>
                 <p><strong>${data[index].Descripcion}</strong></p>
-                <p>Product Code: ${data[index].ProductoID}</p>
+                <p id="codeProduct">Product Code: ${data[index].ProductoID}</p>
               </div>
             </div>
             <div class="price">${data[index].Precio}</div>
             <div class="quantity">
-              <input type="number" value="${data[index].Cantidad}" min="1" class="quantity-field">
+              <input type="number" value="${data[index].Cantidad}" min="1" class="quantity-field" onclick="callUpdate(this)">
             </div>
             <div class="subtotal" id="Subtotal${contador+1}">${data[index].Cantidad * data[index].Precio}</div>
             <div class="remove">
-              <button class="remove">Remove</button>
+              <button class="remove" onclick="deletearCarrito(this)">Remove</button>
             </div>
           </div>`;
           contador++;
       }
-      totalItems.innerHTML +=`${contador} Products in your cart`;
+      //totalItems.innerHTML +=`${contador} Products in your cart`;
       recalculateCart();
+      updateSumItems();
     }
 }
 
-function calSubtotal(){
+getCarrito();
 
+function callUpdate(item){
+  updateQuantity(item);
 }
 
-getCarrito();
+function deletearCarrito(button){
+  removeItem(button)
+}

@@ -21,7 +21,7 @@
         </div>
         <aside>
           <div class="summary">
-            <div class="summary-total-items" id="totalItems"><span class="total-items"></span></div>
+            <div class="summary-total-items"><span class="total-items"  id="totalItems"></span></div>
             <div class="summary-subtotal">
               <div class="subtotal-title">Subtotal</div>
               <div class="subtotal-value final-value" id="basket-subtotal"></div>
@@ -32,11 +32,9 @@
             </div>
             <div class="summary-delivery">
               <select name="delivery-collection" class="summary-delivery-selection">
-                  <option value="0" selected="selected">Select Collection or Delivery</option>
-                 <option value="collection">Collection</option>
-                 <option value="first-class">Royal Mail 1st Class</option>
-                 <option value="second-class">Royal Mail 2nd Class</option>
-                 <option value="signed-for">Royal Mail Special Delivery</option>
+                  <option value="0" selected="selected">Select a payment method</option>
+                 <option value="1">OXXO</option>
+                 <option value="2">Credit/Debit Card</option>
               </select>
             </div>
             <div class="summary-total">
@@ -44,7 +42,7 @@
               <div class="total-value final-value" id="basket-total">130.00</div>
             </div>
             <div class="summary-checkout">
-              <button class="checkout-cta">Go to Secure Checkout</button>
+              <button class="checkout-cta">Payout</button>
             </div>
           </div>
         </aside>
