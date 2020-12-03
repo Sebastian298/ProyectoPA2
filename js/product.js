@@ -15,13 +15,13 @@ function shRouters(){
     peticion.onload = function(){
         data = JSON.parse(peticion.responseText);
         for (let index = 0; index < data.length; index++) {
-            cardsRouter.innerHTML+=`   <div class="card">
-            <img class="card-img-top" src="${data[index].Imagen}"></img>
+            cardsRouter.innerHTML+=`<div class="card">
+            <img class="card-img-top" src="${data[index].Imagen}" style="widht:30%; height:30%"></img>
             <div class="card-body">
               <h5 class="card-title">${data[index].Nombre}</h5>
               <p class="card-text">${data[index].Descripcion}</p>
               <p class="card-text">Price: $${data[index].Precio}</p>
-              <button type="button" class="btn btn-outline-primary" onclick="agregarCarrito(${data[index].ProductoID})">Add to Cart</button>
+              <button type="button" class="btn btn-primary" onclick="agregarCarrito(${data[index].ProductoID})">Add to Cart</button>
             </div>
           </div> `;
         }
@@ -45,7 +45,7 @@ function shSwitch(){
             <h5 class="card-title">${data[index].Nombre}</h5>
             <p class="card-text">${data[index].Descripcion}</p>
             <p class="card-text">Price: $${data[index].Precio}</p>
-            <button type="button" class="btn btn-outline-info" onclick="agregarCarrito(${data[index].ProductoID})>Add to Cart</button>
+            <a class="btn btn-outline-info active" role="button" aria-pressed="true" onclick="agregarCarrito(${data[index].ProductoID})">Add to Cart</a>
             </div>
           </div>`;
         }
@@ -69,7 +69,7 @@ function shAccess(){
             <h5 class="card-title">${data[index].Nombre}</h5>
             <p class="card-text">${data[index].Descripcion}</p>
             <p class="card-text">Price: $${data[index].Precio}</p>
-            <button type="button" class="btn btn-outline-success" onclick="agregarCarrito(${data[index].ProductoID})>Add to Cart</button>
+            <a class="btn btn-outline-success active" role="button" aria-pressed="true" onclick="agregarCarrito(${data[index].ProductoID})">Add to Cart</a>
             </div>
           </div>`;
         }
@@ -93,7 +93,7 @@ function shCables(){
             <h5 class="card-title">${data[index].Nombre}</h5>
             <p class="card-text">${data[index].Descripcion}</p>
             <p class="card-text">Price: $${data[index].Precio}</p>
-            <button type="button" class="btn btn-outline-dark" onclick="agregarCarrito(${data[index].ProductoID})>Add to Cart</button>
+            <a class="btn btn-dark active" role="button" aria-pressed="true" onclick="agregarCarrito(${data[index].ProductoID})">Add to Cart</a>
             </div>
           </div>`;
         }

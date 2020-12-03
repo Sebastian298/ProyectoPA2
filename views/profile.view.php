@@ -35,7 +35,7 @@ if (!(isset($_SESSION['user']))) {
 	                            <img src="https://cdn.discordapp.com/attachments/616076985231343665/783150570591617094/ChrisEvans.jpg" alt="Circle Image" class="img-raised rounded-circle img-fluid">
 	                        </div>
 	                        <div class="name">
-                            <?php  session_start();
+                            <?php
                         try {
                          include '../db/db_conexion.php';
                          $query = "SELECT * FROM usuario where UserID=".$_SESSION['id'];
