@@ -10,6 +10,7 @@ if (!(isset($_SESSION['user']))) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JsNet México| For engineers, by engineers</title>
     <link rel="stylesheet" href="../css/styleProduct.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </head>
 <body>
   <div class="menuContainer"></div>
@@ -28,10 +29,10 @@ if (!(isset($_SESSION['user']))) {
   <h5>Networking Cables</h5>
   <div class="card-deck" id="cardsCables">
   </div>
-
    <footer class="footer"></footer>
    <script src="../js/jquery-2.2.3.min.js"></script>
    <script src="../js/product.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
    <script>
         $(document).ready(function () {
           $('.menuContainer').load('../resource/navbarIndex.html');

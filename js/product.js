@@ -21,7 +21,7 @@ function shRouters(){
               <h5 class="card-title">${data[index].Nombre}</h5>
               <p class="card-text">${data[index].Descripcion}</p>
               <p class="card-text">Price: $${data[index].Precio}</p>
-              <button type="button" class="btn btn-outline-primary">Add to Cart</button>
+              <button type="button" class="btn btn-outline-primary" onclick="agregarCarrito(${data[index].ProductoID})">Add to Cart</button>
             </div>
           </div> `;
         }
@@ -45,7 +45,7 @@ function shSwitch(){
             <h5 class="card-title">${data[index].Nombre}</h5>
             <p class="card-text">${data[index].Descripcion}</p>
             <p class="card-text">Price: $${data[index].Precio}</p>
-            <button type="button" class="btn btn-outline-info">Add to Cart</button>
+            <button type="button" class="btn btn-outline-info" onclick="agregarCarrito(${data[index].ProductoID})>Add to Cart</button>
             </div>
           </div>`;
         }
@@ -69,7 +69,7 @@ function shAccess(){
             <h5 class="card-title">${data[index].Nombre}</h5>
             <p class="card-text">${data[index].Descripcion}</p>
             <p class="card-text">Price: $${data[index].Precio}</p>
-            <button type="button" class="btn btn-outline-success">Add to Cart</button>
+            <button type="button" class="btn btn-outline-success" onclick="agregarCarrito(${data[index].ProductoID})>Add to Cart</button>
             </div>
           </div>`;
         }
@@ -93,9 +93,23 @@ function shCables(){
             <h5 class="card-title">${data[index].Nombre}</h5>
             <p class="card-text">${data[index].Descripcion}</p>
             <p class="card-text">Price: $${data[index].Precio}</p>
-            <button type="button" class="btn btn-outline-dark">Add to Cart</button>
+            <button type="button" class="btn btn-outline-dark" onclick="agregarCarrito(${data[index].ProductoID})>Add to Cart</button>
             </div>
           </div>`;
         }
     }
+}
+
+function agregarCarrito(IdProducto){
+
+  let param = 'IdProducto='+IdProducto;
+  let peticion = new XMLHttpRequest();
+  peticion.open('POST','../db/addCarrito.php');
+  peticion.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  peticion.send(param);
+  Swal.fire(
+    'Excellent!',
+    'Successful update',
+    'success'
+   )
 }

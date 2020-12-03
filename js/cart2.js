@@ -3,6 +3,7 @@ var promoCode;
 var promoPrice;
 var fadeTime = 300;
 
+
 /* Assign actions */
 $('.quantity input').change(function() {
   updateQuantity(this);
@@ -50,17 +51,6 @@ function recalculateCart(onlyTotal) {
 
   /* Calculate totals */
   var total = subtotal;
-
-  //If there is a valid promoCode, and subtotal < 10 subtract from total
-  var promoPrice = parseFloat($('.promo-value').text());
-  if (promoPrice) {
-    if (subtotal >= 10) {
-      total -= promoPrice;
-    } else {
-      alert('Order must be more than £10 for Promo code to apply.');
-      $('.summary-promo').addClass('hide');
-    }
-  }
 
   /*If switch for update only total, update only total display*/
   if (onlyTotal) {
@@ -123,3 +113,46 @@ function removeItem(removeButton) {
     updateSumItems();
   });
 }
+
+function getCarrito(){
+  let contador = 0;
+  let peticion = new XMLHttpRequest();
+    peticion.open('GET','../db/getCarrito.php');
+    peticion.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    peticion.send();
+    peticion.onload = function() {
+      data = JSON.parse(peticion.responseText);
+      for (let index = 0; index < data.length; index++) {
+        items.innerHTML+=`
+        <div class="basket-product">
+            <div class="item">
+              <div class="product-image">
+                <img src="${data[index].Imagen}" alt="Placholder Image 2" class="product-frame">
+              </div>
+              <div class="product-details">
+                <h1><strong><span class="item-quantity">${data[index].Cantidad}</span>  </strong>${data[index].Nombre}</h1>
+                <p><strong>${data[index].Descripcion}</strong></p>
+                <p>Product Code: ${data[index].ProductoID}</p>
+              </div>
+            </div>
+            <div class="price">${data[index].Precio}</div>
+            <div class="quantity">
+              <input type="number" value="${data[index].Cantidad}" min="1" class="quantity-field">
+            </div>
+            <div class="subtotal" id="Subtotal${contador+1}">${data[index].Cantidad * data[index].Precio}</div>
+            <div class="remove">
+              <button class="remove">Remove</button>
+            </div>
+          </div>`;
+          contador++;
+      }
+      totalItems.innerHTML +=`${contador} Products in your cart`;
+      recalculateCart();
+    }
+}
+
+function calSubtotal(){
+
+}
+
+getCarrito();
