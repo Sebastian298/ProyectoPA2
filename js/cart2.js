@@ -2,8 +2,6 @@
 var promoCode;
 var promoPrice;
 var fadeTime = 300;
-
-
 /* Assign actions */
 $('#number').change(function() {
   updateQuantity(this);
@@ -187,4 +185,16 @@ function callUpdate(item){
 
 function deletearCarrito(button){
   removeItem(button)
+}
+
+function metodoPago(){
+  var frame = $('#frame');
+  var url = '../resource/vistaMPago.php';
+  frame.attr('src',url).show();
+}
+
+function Pagar(){
+
+  let payMethod = payment.options[payment.selectedIndex].text;
+ 
 }

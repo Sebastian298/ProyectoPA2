@@ -21,6 +21,7 @@ if (!(isset($_SESSION['user']))) {
       $(document).ready(function () {
       $('.menuContainer').load('../resource/navbarIndex.html');
       $('.footer').load('../resource/footer.html');
+      
     });
   </script>
 </body>

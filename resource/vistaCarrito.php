@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/cart2.css">
 </head>
 <body>
+  
     <main>
         <div class="basket" id="items">
           <div class="basket-labels">
@@ -31,22 +32,26 @@
               </div>
             </div>
             <div class="summary-delivery">
-              <select name="delivery-collection" class="summary-delivery-selection">
-                  <option value="0" selected="selected">Select a payment method</option>
+              <select name="delivery-collection" class="summary-delivery-selection" id="payment">
+                  <option value="0">Select a payment method</option>
                  <option value="1">OXXO</option>
                  <option value="2">Credit/Debit Card</option>
               </select>
             </div>
+            <div class="summary-checkout">
+              <button class="checkout-cta" id="payment" onclick="metodoPago()">Add</button>
+            </div>
             <div class="summary-total">
               <div class="total-title">Total</div>
-              <div class="total-value final-value" id="basket-total">130.00</div>
+              <div class="total-value final-value" id="basket-total">0.00</div>
             </div>
             <div class="summary-checkout">
-              <button class="checkout-cta">Payout</button>
+              <button class="checkout-cta" id="payout" onclick="Pagar()">Payout</button>
             </div>
           </div>
         </aside>
       </main>
+      
       <script src="../js/cart2.js"></script>
 </body>
 </html>
