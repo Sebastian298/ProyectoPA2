@@ -14,8 +14,8 @@ function registerAddress(){
        peticion.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
        peticion.send(params);
        Swal.fire(
-        'Excelente!',
-        'Se a registrado correctamente',
+        'Excellent!',
+        'It has been successfully registered',
         'success'
        ).then(() => {
         location.href = "../login.php"

@@ -6,6 +6,7 @@
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <link rel="stylesheet" href="../css/cart2.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </head>
 <style>
   #metodoPago{display:none;}
@@ -45,7 +46,7 @@
             <div class="summary-delivery" id="metodoPago">
               <div class="subtotal-tittle"></div>
               <div class="subtotal-tittle"><input class="summary-delivery-selection" type="text"  id="nCard" placeholder="Name on card" onkeypress='return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 &&  event.charCode <=122 || event.charCode==32'></div>
-              <div class="subtotal-tittle"><input class="summary-delivery-selection" type="text" maxlength="16" id="cNumber" placeholder="Card number"></div>
+              <div class="subtotal-tittle"><input class="summary-delivery-selection" type="text" maxlength="16" id="cNumber" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="Card number"></div>
               <div class="subtotal-tittle">
                 <select name="delivery-collection" class="summary-delivery-selection" id="MM">
                   <option value="0">MM</option>
@@ -73,7 +74,7 @@
                     <option value="5">2024</option>
                 </select>
               </div>
-              <div class="subtotal-tittle"><input class="summary-delivery-selection" maxlength="3" type="text" id="CVC" placeholder="CVV"></div>
+              <div class="subtotal-tittle"><input class="summary-delivery-selection" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="3" type="text" id="CVC" placeholder="CVV"></div>
             </div>
             <div class="summary-total">
               <div class="total-title">Total</div>
