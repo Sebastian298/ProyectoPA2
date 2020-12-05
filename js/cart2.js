@@ -177,15 +177,18 @@ function metodoPago(){
 
 //Metodo para mandar la peticion de compras
 function Pagar(){
+ 
   if (paymentSelect.value==2) {
      if (validarPago()) {
+      alert("Hola");
       let peticion = new XMLHttpRequest();
-      peticion.open('POST','../db/addAddress.php');
+      peticion.open('POST','../db/addCompra.php');
       let param = 'metodoID='+paymentSelect.value;
       peticion.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
       peticion.send(param);
+      alert("Producto agregado con éxito!");
      }else{
-       
+       alert("No válido");
      }
   }
  

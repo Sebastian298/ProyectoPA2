@@ -73,7 +73,7 @@
                     <option value="5">2024</option>
                 </select>
               </div>
-              <div class="subtotal-tittle"><input class="summary-delivery-selection" maxlength="3" type="text" id="CVC" placeholder="CVC"></div>
+              <div class="subtotal-tittle"><input class="summary-delivery-selection" maxlength="3" type="text" id="CVC" placeholder="CVV"></div>
             </div>
             <div class="summary-total">
               <div class="total-title">Total</div>
