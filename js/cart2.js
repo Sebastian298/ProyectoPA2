@@ -177,20 +177,27 @@ function metodoPago(){
 
 //Metodo para mandar la peticion de compras
 function Pagar(){
- 
+  //En caso de que sea tarjeta verificamos que los campos no queden vacíos
   if (paymentSelect.value==2) {
-     if (validarPago()) {
-      alert("Hola");
-      let peticion = new XMLHttpRequest();
-      peticion.open('POST','../db/addCompra.php');
-      let param = 'metodoID='+paymentSelect.value;
-      peticion.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-      peticion.send(param);
-      alert("Producto agregado con éxito!");
+
+     if (!validarPago()) {
+     alert("No deje campos vacíos.");
+     return;
      }else{
        alert("No válido");
      }
+    
   }
+  else if(paymentSelect.value==1){
+    //En caso de que sea OXXO le mandamos un número de referencia
+  }
+  //Realizamos la petición
+  let peticion = new XMLHttpRequest();
+  peticion.open('POST','../db/addCompra.php');
+  let param = 'metodoID='+paymentSelect.value;
+  peticion.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  peticion.send(param);
+  alert("Producto agregado con éxito!");
  
 }
 
