@@ -8,7 +8,7 @@ if (!(isset($_SESSION['user']))) {
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Basket</title>
+  <title>JsNet México | For engineers, by engineers</title>
 </head>
 
 <body>

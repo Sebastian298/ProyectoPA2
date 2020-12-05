@@ -188,13 +188,32 @@ function deletearCarrito(button){
 }
 
 function metodoPago(){
-  var frame = $('#frame');
-  var url = '../resource/vistaMPago.php';
-  frame.attr('src',url).show();
+  let x = document.getElementById("paymentSelect").value;
+  if (x==2){
+    $("#metodoPago").show();
+  }else{
+    $("#metodoPago").hide();
+  }
+ 
 }
 
+//Metodo para mandar la peticion de compras
 function Pagar(){
-
-  let payMethod = payment.options[payment.selectedIndex].text;
+  if (paymentSelect.value==2) {
+     if (validarPago()) {
+      let peticion = new XMLHttpRequest();
+      peticion.open('POST','../db/addAddress.php');
+      let param = 'metodoID='+paymentSelect.value;
+      peticion.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      peticion.send(param);
+     }else{
+       
+     }
+  }
  
+}
+
+function validarPago(){
+  if(nCard.value=="" | cNumber.value==""| MM.value==0|AAAA.value==0|CVC.value=="") return false;
+  return true;
 }
