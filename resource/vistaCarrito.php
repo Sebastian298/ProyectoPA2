@@ -80,7 +80,14 @@
               <div class="total-title">Total</div>
               <div class="total-value final-value" id="basket-total">0.00</div>
             </div>
-         
+            <div class="summary-checkout">
+              <button class="checkout-cta" id="guardarXML" onclick="download()">Export cart</button>
+            </div>
+            <hr>
+            <div class="summary-checkout">
+              <button class="checkout-cta" id="importXML">Import cart</button>
+            </div>
+            <hr>
             <div class="summary-checkout">
               <button class="checkout-cta" id="payout" onclick="Pagar()">Payout</button>
             </div>

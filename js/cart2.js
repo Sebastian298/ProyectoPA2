@@ -215,3 +215,56 @@ function validarPago(){
   if(nCard.value=="" | cNumber.value==""| MM.value==0|AAAA.value==0|CVC.value=="") return false;
   return true;
 }
+
+// function download(){
+ 
+
+
+   
+// }
+function downloadData(contentType,data,filename){
+
+  var link=document.createElement("A");
+  link.setAttribute("href",encodeURI("data:"+contentType+","+data));
+  link.setAttribute("style","display:none");
+  link.setAttribute("download",filename);
+  document.body.appendChild(link); 
+  link.click();
+  setTimeout(function(){
+    document.body.removeChild(link);
+  },1000);
+}
+
+function download(){
+
+  var data=fromToXml();
+  
+  downloadData("text/xml",data,"export.xml");
+ }
+ 
+
+function fromToXml(){
+  
+  var req = new XMLHttpRequest();
+  req.open('GET', '../db/getCarrito.php', false); 
+  req.send(null);
+  if (req.status == 200){
+    var xmldata=['<?xml version="1.0"?>'];
+    xmldata.push("<cart>");
+   data = JSON.parse(req.responseText);
+   for (let index = 0; index < data.length; index++) {
+     let item = '';
+     item+=`<Product>`;
+     item+=`<ID>${data[index].ProductoID}</ID>`;
+     item+=`<Name>${data[index].Nombre}</Name>`;
+     item+=`<Description>${data[index].Descripcion}</Description>`;
+     item+=`<Price>${data[index].Precio}</Price>`;
+     item+=`<Quantity>${data[index].Cantidad}</Quantity>`
+     item+=`<Image>${data[index].Imagen}</Image>`;
+     item+=`</Product>`;
+     xmldata.push(item);
+    }
+    xmldata.push("</cart>");
+    return xmldata.join("\n");
+  }
+}

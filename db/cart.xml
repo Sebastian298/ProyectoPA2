@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+    <Product>
+        <ID>2</ID>
+        <Name> Cisco AIR-CT3504-K9 3504 wireless drive</Name>
+    </Product>
+    <Product>
+        <ID>1</ID>
+        <Name>Router Cisco Gigabit Ethernet with firewall</Name>
+    </Product>
+</xml>
