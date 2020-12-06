@@ -62,6 +62,7 @@ if (!(isset($_SESSION['user']))) {
     	            </div>
                 </div>
                 <button type="button" class="btn btn-outline-success" onclick="updateUser()">Update</button>
+              <a href="PurchaseHistory.view.php"> <button type="button" class="btn btn-outline-primary"">Show purchase history</button></a> 
                 <div class="description text-center">
                     <p>Aquí puede ir cualquier cosa, nomás de prueba lorem Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium ullam veniam ad quasi saepe similique, voluptate omnis expedita laboriosam, fugiat repellendus nostrum odio animi ex minima repellat labore id molestiae.</p>
                 </div>
