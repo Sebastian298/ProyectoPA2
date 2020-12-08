@@ -58,7 +58,7 @@ function inputVacio(){
 }
 
 function updateUser(){
-    if (validarCaptura() && inputVacio()) {
+    if (inputVacio()&&ValidarCampos()) {
         let userName = nameUser.value,
         lastName = lName.value,
         idUser = userID.value,
@@ -84,6 +84,24 @@ function updateUser(){
             'error'
           )
     }
+}
+
+function ValidarCampos(){
+        let ids = ["nameUser","lName","emailUser","tel"]
+        for (let index = 0; index < ids.length ; index++) {
+            let element = document.getElementById(ids[index]);
+        let cStyle = getComputedStyle(element);
+        let color = cStyle.getPropertyValue("background-image");  
+        switch (color) {
+            case 'linear-gradient(0deg, rgb(0, 150, 136) 2px, rgba(0, 150, 136, 0) 0px), linear-gradient(0deg, rgba(0, 0, 0, 0.26) 1px, rgba(0, 0, 0, 0) 0px)':
+                break;
+            case 'linear-gradient(0deg, rgb(213, 0, 0) 2px, rgba(213, 0, 0, 0) 0px), linear-gradient(0deg, rgba(0, 0, 0, 0.26) 1px, rgba(0, 0, 0, 0) 0px)':
+                return false;
+        }
+        }
+       
+    
+ return true;
 }
 
 function ValidFields(){

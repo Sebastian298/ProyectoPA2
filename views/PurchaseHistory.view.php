@@ -31,7 +31,8 @@ if(!(isset($_SESSION['user']))){
           <table class="table table-responsive" id="items">
          <thead>
              <tr>
-               <th>Producto</th>
+             <th>Producto</th>
+               <th>Descripción</th>
                <th>Cantidad</th>
                <th>Total</th>
              </tr>

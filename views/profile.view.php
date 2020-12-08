@@ -45,13 +45,17 @@ if (!(isset($_SESSION['user']))) {
                         <h3 class="title">'.$array['Usuario'].'</h3>
                         <input type="text" id="userID" value="'.$array['UserID'].'"></>
                         <h6><b>Name: </b></h6>
-                        <input type="text" id="nameUser" class="form-control" value="'.$array['Nombre'].'"</>
+                        <input type="text" id="nameUser" pattern="^[a-zA-Záéíóú\s]*$" class="form-control" value="'.$array['Nombre'].'"</>
                         <h6><b>Last Name: </b></h6>
-                        <input type="text" id="lName" class="form-control" value="'.utf8_decode($array['Apellidos']).'"></>
+                        <input type="text" id="lName" pattern="^[a-zA-Záéíóú\s]*$" class="form-control" value="'.utf8_decode($array['Apellidos']).'"></>
+                
                         <h6><b>Email: </b></h6>
-                        <input type="text" id="emailUser" class="form-control" value="'.$array['CorreoElectronico'].'"></b>
+                        <input type="text" id="emailUser" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="'.$array['CorreoElectronico'].'"></b>
+     
                         <h6><b>Phone: </b></h6>
-                        <input type="text" class="form-control" id="tel" value="'.$array['Telefono'].'"></>';
+                        <input type="text" class="form-control" id="tel" pattern="[0-9]*$" value="'.$array['Telefono'].'"></>';
+
+                        
                          }
                             } catch (PDOException $e) {
                               echo 'Error!: ',  $e->getMessage(), "\n";
