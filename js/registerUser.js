@@ -86,11 +86,6 @@ function updateUser(){
     }
 }
 
-// var element = document.getElementById(id);
-//     var cStyle = getComputedStyle(element);
-//     var visibility = cStyle.getPropertyValue("visibility");  
-//     element.style.visibility = visibility === "visible" ? "hidden" : "visible";
-
 function ValidFields(){
     for (let index = 1; index < 6; index++) {
         let concValid = 'valid' + index.toString();
