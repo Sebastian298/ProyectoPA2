@@ -20,13 +20,13 @@ if (!(isset($_SESSION['user']))) {
     <link rel="stylesheet" href="../css/stylesProfile.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="../js/Profile.js"></script>
+    <link rel="stylesheet" href="../css/darkMode.css"> 
 </head>
-<body>
-<header class="menuContainer"></header>
-<body class="profile-page">
+<header class="menuContainer" ></header>
+<body class="profile-page" id="profile-page">
     <div class="page-header header-filter" data-parallax="true" style="background-image:url('https://cdn.discordapp.com/attachments/616076985231343665/783154896773709834/thumb-1920-1034735.png');"></div>
     <div class="main main-raised">
-		<div class="profile-content">
+		<div class="profile-content" id="profile">
             <div class="container">
                 <div class="row">
 	                <div class="col-md-6 ml-auto mr-auto">
@@ -63,9 +63,6 @@ if (!(isset($_SESSION['user']))) {
                 </div>
                 <button type="button" class="btn btn-outline-success" onclick="updateUser()">Update</button>
               <a href="PurchaseHistory.view.php"> <button type="button" class="btn btn-outline-primary"">Show purchase history</button></a> 
-                <div class="description text-center">
-                    <p>Aquí puede ir cualquier cosa, nomás de prueba lorem Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium ullam veniam ad quasi saepe similique, voluptate omnis expedita laboriosam, fugiat repellendus nostrum odio animi ex minima repellat labore id molestiae.</p>
-                </div>
             </div>
             </div>
         </div>
@@ -74,6 +71,7 @@ if (!(isset($_SESSION['user']))) {
 	<footer class="footer"></footer>
   <script src="../js/jquery-2.2.3.min.js"></script>
   <script src="../js/registerUser.js"></script>
+  <script src="../resource/darkMode.js"></script>
   <script>
       $(document).ready(function () {
       $('.menuContainer').load('../resource/navbarIndex.html');

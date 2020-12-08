@@ -7,8 +7,9 @@
     <title>JsNet México | For engineers, by engineers</title>
     <link rel="stylesheet" href="../css/stylesRegisterUser.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link rel="stylesheet" href="../css/darkMode.css"> 
 </head>
-<body>
+<body id="body">
     <header class="menuContainer"></header>
     <form id="form1" class="was-validated" novalidate>
         <div class="container py-3">
@@ -102,6 +103,7 @@
     </form>
     <footer class="footer"></footer>
   <script src="../js/registerUser.js"></script>
+  <script src="../resource/darkMode.js"></script>
   <script src="../js/jquery-2.2.3.min.js"></script>
   <script src="../js/validatePassword.js"></script>
   <script>

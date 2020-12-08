@@ -7,21 +7,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <link rel="stylesheet" href="../css/cart2.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link rel="stylesheet" href="../css/darkMode.css"> 
 </head>
 <style>
   #metodoPago{display:none;}
   #addMethod{display:none;}
 </style>
-<body>
-  
+<body id="body">
     <main>
         <div class="basket" id="items">
           <div class="basket-labels">
             <ul>
               <li class="item item-heading">Item</li>
-              <li class="price">Price</li>
-              <li class="quantity">Quantity</li>
-              <li class="subtotal">Subtotal</li>
+              <li class="item price">Price</li>
+              <li class="item quantity">Quantity</li>
+              <li class="item subtotal">Subtotal</li>
             </ul>
           </div>
         </div>
@@ -98,7 +98,7 @@
       </main>
 
           
-      
+      <script src="../resource/darkMode.js"></script>
       <script src="../js/cart2.js"></script>
 </body>
 </html>

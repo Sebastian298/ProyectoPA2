@@ -11,27 +11,29 @@ if (!(isset($_SESSION['user']))) {
     <title>JsNet México | For engineers, by engineers</title>
     <link rel="stylesheet" href="../css/styleProduct.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link rel="stylesheet" href="../css/darkMode.css"> 
 </head>
-<body>
+<body id="body">
   <div class="menuContainer"></div>
   <h5>Routers</h5>
-  <div class="card-deck" id="cardsRouter">
+  <div class="card-deck" id="cardsRouter" id="body">
   </div>
   <hr>
   <h5>Switches</h5>
-  <div class="card-deck" id="cardsSwitch">
+  <div class="card-deck" id="cardsSwitch" id="body">
   </div>
   <hr>
   <h5>Access Points</h5>
-  <div class="card-deck" id="cardsAccess">
+  <div class="card-deck" id="cardsAccess" id="body">
   </div>
   <hr>
   <h5>Networking Cables</h5>
-  <div class="card-deck" id="cardsCables">
+  <div class="card-deck" id="cardsCables" id="body">
   </div>
    <footer class="footer"></footer>
    <script src="../js/jquery-2.2.3.min.js"></script>
    <script src="../js/product.js"></script>
+   <script src="../resource/darkMode.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
    <script>
         $(document).ready(function () {

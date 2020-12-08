@@ -21,7 +21,7 @@ function shRouters(){
               <h5 class="card-title">${data[index].Nombre}</h5>
               <p class="card-text">${data[index].Descripcion}</p>
               <p class="card-text">Price: $${data[index].Precio}</p>
-              <button type="button" class="btn btn-primary" onclick="agregarCarrito(${data[index].ProductoID})">Add to Cart</button>
+              <button type="button" class="btn btn-warning" onclick="agregarCarrito(${data[index].ProductoID})">Add to Cart</button>
             </div>
           </div> `;
         }

@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JsNet México | For engineers, by engineers</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link rel="stylesheet" href="../css/darkMode.css"> 
 </head>
-<body>
+<body id="body">
    <header class="menuContainer"></header>
 
    <div class="container">
@@ -33,14 +34,14 @@
               </div>
               <div class="form-group">
                 <label for="inputAddress2">Settlement</label>
-                <input type="text" class="form-control" id="settlement" onkeypress='return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 &&  event.charCode <=122 ' required onpaste="return false">
+                <input type="text" class="form-control" id="settlement" onkeypress='return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 &&  event.charCode <=122 || event.charCode==32' required onpaste="return false">
                 <div class="valid-feedback">Valid.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="inputCity">City</label>
-                  <input type="text" class="form-control" id="city" onkeypress='return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 &&  event.charCode <=122 ' required onpaste="return false">
+                  <input type="text" class="form-control" id="city" onkeypress='return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 &&  event.charCode <=122 || event.charCode==32' required onpaste="return false">
                   <div class="valid-feedback">Valid.</div>
                   <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
@@ -70,7 +71,7 @@
   
   <footer class="footer"></footer>
 
-
+  <script src="../resource/darkMode.js"></script>
   <script src="../js/jquery-2.2.3.min.js"></script>
   <script src="../js/registerAddress.js"></script>
   <script>

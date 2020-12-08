@@ -1,0 +1,117 @@
+body.dark-mode {
+    background-color: #23272a;
+    color: #fff;
+}
+body.dark-mode a {
+    color: #23272a;
+}
+body.dark-mode button {
+    background-color: #fff;
+    color: #23272a;
+}
+body.light-mode {
+    background-color: #fff;
+    color: #23272a;
+}
+body.light-mode h5{
+    background-color: #fff;
+    color: #23272a;
+}
+body.dark-mode h5{
+    background-color: #23272a;
+    color: #fff;
+}
+
+#profile.light-mode{
+    background-color: #fff;
+    color: #23272a;
+}
+#profile.dark-mode{
+    background-color: #23272a;
+    color: #fff;
+}
+
+.profile-page .light-mode{
+    background-color: #fff;
+    color: #23272a;
+}
+.profile-page .dark-mode{
+    background-color: #23272a;
+    color: #fff;
+}
+
+.blue .light-mode{
+    background-color: #fff;
+    color: #23272a;
+}
+.blue .dark-mode{
+    background-color: #23272a;
+    color: #fff;
+}
+
+body.light-mode p{
+    background-color: #fff;
+    color: #23272a;
+}
+body.dark-mode p{
+    background-color: #23272a;
+    color: #fff;
+}
+
+body.light-mode .card{
+    background-color: transparent;
+    color: #23272a;
+}
+body.dark-mode .card{
+    background-color: transparent;
+    color: #fff;
+}
+
+#profile.light-mode{
+    background-color: #fff;
+    color: #23272a;
+}
+#profile.dark-mode{
+    background-color:  #23272a;
+    color: #fff;
+}
+
+
+body.light-mode .item{
+    color: #23272a;
+}
+body.dark-mode .item{
+    color: #fff;
+}
+
+body.light-mode label{
+    color: #23272a;
+}
+body.dark-mode label{
+    color: #fff;
+}
+
+body.light-mode h4{
+    color: #23272a;
+}
+body.dark-mode h4{
+    color: #fff;
+}
+
+body.light-mode .list-unstyled{
+    color: #23272a;
+}
+body.dark-mode .list-unstyled{
+    color: #fff;
+}
+
+body.light-mode a {
+    color: #23272a;
+}
+body.light-mode a {
+    color: #fff;
+}
+body.light-mode button {
+    background-color: #23272a;
+    color: #fff;
+}

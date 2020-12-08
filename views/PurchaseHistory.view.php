@@ -12,7 +12,7 @@ if(!(isset($_SESSION['user']))){
     <script src="https://kit.fontawesome.com/8b850b0e85.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </head>
-<body>
+<body id="body">
    <header class="menuContainer"></header>
    
   <div class="container">
