@@ -83,10 +83,10 @@
             <div class="summary-checkout">
               <button class="checkout-cta" id="guardarXML" onclick="download()">Export cart</button>
             </div>
-            <!-- <div class="summary-checkout">
-              <input type="file" class="checkout-cta" id="importXML">
-              <button class="checkout-cta">Import cart</button>
-            </div> -->
+            <form id="form" action="../db/loadXML.php" method="post" enctype="multipart/form-data">
+             <input type="file" name="fileToUpload" id="fileToUpload">
+           </form>
+           <button onclick="loadXML()">Import cart</button>
             <hr>
             <div class="summary-checkout">
               <button class="checkout-cta" id="payout" onclick="Pagar()">Payout</button>

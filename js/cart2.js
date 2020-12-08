@@ -239,10 +239,6 @@ function Pagar(){
  
 }
 
-function cargarXML(){
-  alert('Jaj')
-}
-
 function validarPago(){
   if(nCard.value=="" | cNumber.value==""| MM.value==0|AAAA.value==0|CVC.value=="") return false;
   return true;
@@ -276,8 +272,23 @@ function download(){
       })
   }
   
- }
- 
+}
+
+
+function loadXML(){
+  if(fileToUpload.value == ''){
+    Swal.fire(
+      'Error!',
+      `No files selected`,
+      'error'
+      ).then(()=>{
+        return;
+      })
+  }else{
+    form.submit();
+  }
+  
+}
 
 function fromToXml(){
   
@@ -290,19 +301,15 @@ function fromToXml(){
    data = JSON.parse(req.responseText);
    for (let index = 0; index < data.length; index++) {
      let item = '';
-     item+=`<Product>`;
      item+=`<ID>${data[index].ProductoID}</ID>`;
      item+=`<Name>${data[index].Nombre}</Name>`;
      item+=`<Description>${data[index].Descripcion}</Description>`;
      item+=`<Price>${data[index].Precio}</Price>`;
      item+=`<Quantity>${data[index].Cantidad}</Quantity>`
      item+=`<Image>${data[index].Imagen}</Image>`;
-     item+=`</Product>`;
      xmldata.push(item);
     }
     xmldata.push("</cart>");
     return xmldata.join("\n");
   }
 }
-
-function PaHacerPush(){}

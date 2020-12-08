@@ -29,7 +29,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fa fa-user"></i></span>
                                             </div>
-                                            <input ID="txtUserName" Class="form-control" name="username" type="text" onkeypress='return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 &&  event.charCode <=122 || event.charCode==32' required onpaste="return false"/>
+                                            <input ID="txtUserName" Class="form-control" name="username" pattern="[0-9a-zA-Z]*$" type="text"  required onpaste="return false"/>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -40,7 +40,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fa fa-user"></i></span>
                                             </div>
-                                            <input ID="txtName" Class="form-control" name="name" type="text"onkeypress='return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 &&  event.charCode <=122 || event.charCode==32' required onpaste="return false"/>
+                                            <input ID="txtName" Class="form-control" name="name" pattern="^[a-zA-Záéíóú\s]*$" type="text"onkeypress='return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 &&  event.charCode <=122 || event.charCode==32' required onpaste="return false"/>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -51,7 +51,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fa fa-user"></i></span>
                                             </div>
-                                            <input ID="txtLastName" Class="form-control" name="lastname" type="text"onkeypress='return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 &&  event.charCode <=122 || event.charCode==32' required onpaste="return false"/>
+                                            <input ID="txtLastName" Class="form-control" name="lastname" pattern="^[a-zA-Záéíóú\s]*$" type="text" required onpaste="return false"/>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
@@ -62,7 +62,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fa fa-phone"></i></span>
                                             </div>
-                                            <input ID="txtPhone" placeholder="+52" Class="form-control" name="phonenumber" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required onpaste="return false"/>
+                                            <input ID="txtPhone" placeholder="+52" Class="form-control" pattern="[0-9]*$" name="phonenumber" type="text"  required onpaste="return false"/>
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
