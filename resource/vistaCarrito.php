@@ -83,11 +83,10 @@
             <div class="summary-checkout">
               <button class="checkout-cta" id="guardarXML" onclick="download()">Export cart</button>
             </div>
-            <hr>
-            <div class="summary-checkout">
+            <!-- <div class="summary-checkout">
               <input type="file" class="checkout-cta" id="importXML">
               <button class="checkout-cta">Import cart</button>
-            </div>
+            </div> -->
             <hr>
             <div class="summary-checkout">
               <button class="checkout-cta" id="payout" onclick="Pagar()">Payout</button>

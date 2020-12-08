@@ -105,12 +105,31 @@ body.dark-mode .list-unstyled{
     color: #fff;
 }
 
-body.light-mode a {
+body.light-mode a{
     color: #23272a;
 }
-body.light-mode a {
+body.dark-mode a{
     color: #fff;
 }
+
+body.light-mode table{
+    color: #23272a;
+}
+body.dark-mode table{
+    color: #fff;
+}
+
+body.light-mode h1{
+    color: #23272a;
+}
+body.dark-mode h1{
+    color: #fff;
+}
+
+body.light-mode{
+    color: #23272a;
+}
+
 body.light-mode button {
     background-color: #23272a;
     color: #fff;

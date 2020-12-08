@@ -11,6 +11,7 @@ if(!(isset($_SESSION['user']))){
     <title>JsNet México | For engineers, by engineers</title>
     <script src="https://kit.fontawesome.com/8b850b0e85.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link rel="stylesheet" href="../css/darkMode.css"> 
 </head>
 <body id="body">
    <header class="menuContainer"></header>
@@ -27,7 +28,7 @@ if(!(isset($_SESSION['user']))){
         </div>
         <div class="row offset-1">
           <div class="col">
-          <table class="table table-responsive">
+          <table class="table table-responsive" id="items">
          <thead>
              <tr>
                <th>Producto</th>
@@ -43,8 +44,8 @@ if(!(isset($_SESSION['user']))){
 
   </div>   
 
-
-   <footer class="footer"></footer>
+  
+  <footer class="footer"></footer>
   <script src="../js/jquery-2.2.3.min.js"></script>
   <script>
       $(document).ready(function () {
@@ -96,7 +97,7 @@ cargarCompras();
 
 }
 </script>
-
+<script src="../resource/darkMode.js"></script>
 
 </body>
 </html>
