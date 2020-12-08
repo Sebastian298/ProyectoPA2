@@ -304,3 +304,5 @@ function fromToXml(){
     return xmldata.join("\n");
   }
 }
+
+function PaHacerPush(){}
