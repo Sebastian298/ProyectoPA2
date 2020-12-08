@@ -85,7 +85,8 @@
             </div>
             <hr>
             <div class="summary-checkout">
-              <button class="checkout-cta" id="importXML">Import cart</button>
+              <input type="file" class="checkout-cta" id="importXML">
+              <button class="checkout-cta">Import cart</button>
             </div>
             <hr>
             <div class="summary-checkout">

@@ -10,6 +10,7 @@ if(!(isset($_SESSION['user']))){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JsNet México | For engineers, by engineers</title>
     <script src="https://kit.fontawesome.com/8b850b0e85.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </head>
 <body>
    <header class="menuContainer"></header>
@@ -66,8 +67,12 @@ cargarCompras();
       FechaFin = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     }
   let param = 'FechaInicio='+FechaDeInicio+'&FechaFinal='+FechaFin;
-  if (FechaDeInicio < FechaFin) {
-    alert('ERROR');
+  if (FechaDeInicio > FechaFin) {
+    Swal.fire(
+          'Error!',
+          'The start date must not be greater than the end date',
+          'error'
+         )
   }else{
     let peticion = new XMLHttpRequest();
      peticion.open("POST", "../db/GetCompras.php");

@@ -16,7 +16,6 @@ $(document).ready(function() {
   updateSumItems();
 });
 
-
 /* Recalculate cart */
 function recalculateCart(onlyTotal) {
   var subtotal = 0;
@@ -175,40 +174,73 @@ function metodoPago(){
  
 }
 
-//Metodo para mandar la peticion de compras
-function Pagar(){
-  //En caso de que sea tarjeta verificamos que los campos no queden vacíos
-  if (paymentSelect.value==2) {
-     if (!validarPago()) {
-      Swal.fire(
-        'Error!',
-        `There's an empty field or a field with bad information`,
-        'error'
-        ).then(()=>{
-          return;
-        })
-     }else{
+function peticionPagar(){
         let peticion = new XMLHttpRequest();
         peticion.open('POST','../db/addCompra.php');
         let param = 'metodoID='+paymentSelect.value;
         peticion.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         peticion.send(param);
-        Swal.fire(
-          'Thank you!',
-          'Your purchase has been registered',
-          'success'
-         ).then(() => {
-          location.reload();
-         })
-     }
-    
+}
+//Metodo para mandar la peticion de compras
+function Pagar(){
+  //En caso de que sea tarjeta verificamos que los campos no queden vacíos
+  if(items.children.length > 1){
+    if(paymentSelect.value==0){
+      Swal.fire(
+        'Error!',
+        `You must select a payment method`,
+        'error'
+        ).then(()=>{
+          return;
+        })
+    }else if(paymentSelect.value==1 | paymentSelect.value==2 ){
+     
+      peticionPagar();
+      if (paymentSelect.value==1) {
+        var bandera = true;
+        var codigo=Math.random().toString();
+        codigo = codigo.substring(2);
+        codigo = 'your OXXO reference code is ' + codigo;
+        
+      }else{
+        bandera = false;
+        codigo = " ";
+        if (!validarPago()) {
+          Swal.fire(
+            'Error!',
+            `There's an empty field or a field with bad information`,
+            'error'
+            ).then(()=>{
+              return;
+            })
+        }
+          
+      }
+      Swal.fire(
+        'Thank you!',
+        'Your purchase has been registered ' + codigo,
+        'success'
+       ).then(() => {
+         location.reload();
+       })
+    }
+  }else{
+    Swal.fire(
+      'Error!',
+      `Your cart is empty`,
+      'error'
+      ).then(()=>{
+        return;
+      })
   }
-  else if(paymentSelect.value==1){
-    //En caso de que sea OXXO le mandamos un número de referencia
-  }
+  
   
   
  
+}
+
+function cargarXML(){
+  alert('Jaj')
 }
 
 function validarPago(){
@@ -216,12 +248,6 @@ function validarPago(){
   return true;
 }
 
-// function download(){
- 
-
-
-   
-// }
 function downloadData(contentType,data,filename){
 
   var link=document.createElement("A");
@@ -237,9 +263,19 @@ function downloadData(contentType,data,filename){
 
 function download(){
 
-  var data=fromToXml();
+  if(items.children.length > 1){
+    var data=fromToXml();
+    downloadData("text/xml",data,"export.xml");
+  }else{
+    Swal.fire(
+      'Error!',
+      `Your cart is empty`,
+      'error'
+      ).then(()=>{
+        return;
+      })
+  }
   
-  downloadData("text/xml",data,"export.xml");
  }
  
 
